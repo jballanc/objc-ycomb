@@ -84,7 +84,7 @@ pack/unpack the arguments.
 Why, I'm glad you asked! The motivation for creating a Y-Combinator for Objective-C originated with a useful, but somewhat
 confusing, feature of [Grand Central
 Dispatch](http://developer.apple.com/library/mac/#documentation/Performance/Reference/GCD_libdispatch_Ref/Reference/reference.html):
-VNODE dispatch sources. Let's look briefly at what these are, how they're useful, and how you a Y-Combinator in Objective-C makes
+VNODE dispatch sources. Let's look briefly at what these are, how they're useful, and how using a Y-Combinator in Objective-C makes
 working with them ever so slightly easier.
 
 First, dispatch sources are a means of setting a block of code to be enqueued on one of GCD's queues whenever a certain OS event
