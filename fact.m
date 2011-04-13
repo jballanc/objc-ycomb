@@ -12,16 +12,15 @@
 int main(int argc, char *argv[])
 {
   NSNumber *val;
-  YComb factorial = RecursiveBlock(
-    (NSNumber *) ^(NSNumber *val) {
-      if([val compare: [NSNumber numberWithInt: 0]] == NSOrderedSame) {
-        return [NSNumber numberWithInt:1];
-      } else {
-        NSNumber *next_val = this_block([NSNumber numberWithInt:([val intValue] - 1)]);
-        return [NSNumber numberWithInt:([val intValue] * [next_val intValue])];
-      }
-    }
-  );
+  RecurBlock factorial = YComb((NSNumber *) ^(NSNumber *val) {
+                                 if([val compare: [NSNumber numberWithInt: 0]] == NSOrderedSame) {
+                                   return [NSNumber numberWithInt:1];
+                                 } else {
+                                   NSNumber *next_val = this_block([NSNumber numberWithInt:([val intValue] - 1)]);
+                                   return [NSNumber numberWithInt:([val intValue] * [next_val intValue])];
+                                 }
+                               });
 
-  NSLog(@"Factorial of %s: %@", argv[1], factorial([NSNumber numberWithInt:atoi(argv[1])]));
+  printf("Factorial of %s: %li\n", argv[1], [factorial([NSNumber numberWithInt:atoi(argv[1])]) longValue]);
+  return 0;
 }
