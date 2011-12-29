@@ -17,3 +17,6 @@ fun:
 
 nofun:
 	$(MAKE) compile target=nofun
+
+clean:
+	rm -f $(all_targets)
