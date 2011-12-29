@@ -155,9 +155,10 @@ You knew there had to be a catch, right?
 To make the Y-Combinator work requires using <code>Block_copy</code>. <code>Block_copy</code> does an implicit
 <code>Block_retain</code> which must normally be balanced by a <code>Block_release</code>. However, because of the way the
 Y-Combinator works, there's no good way to keep around references to each block being copied, so there's no way to do the proper
-releasing. This means that all those blocks would leak. So, the Y-Combinator **ONLY** works under Objective-C with Garbage
-Collection enabled! Also, this has only been tested with clang 2.0 (from LLVM 2.9) under OS X. If you get it to work under any other
-combination of OS/Compiler, please let me know and I'll add a note here.
+releasing. This means that all those blocks would leak. So, the Y-Combinator **ONLY** works under Objective-C with either Garbage
+Collection enabled, or (if you're using the newest version of the Apple Developer Tools) using Automatic Reference Counting. Also,
+this has only been tested with clang 2.x (from the LLVM project) under OS X. If you get it to work under any other combination of
+OS/Compiler, please let me know and I'll add a note here.
 
 ### The Examples
 
@@ -167,9 +168,8 @@ of these by checking out the repository and running <code>make</code>, but you m
 
 ## Contributing
 
-There's not much to y.h, but if you have an idea on how it could be made better, please let me know. Specifically, I'd love it if
-you could figure out how to make it work under non-GC conditions without leaking. I'm also very much open to any corrections to this
-README or the examples. Finally, if you have any creative examples using the Y-Combinator, I'd love to see them!
+There's not much to y.h, but if you have an idea on how it could be made better, please let me know. I'm also very much open to any
+corrections to this README or the examples. Finally, if you have any creative examples using the Y-Combinator, I'd love to see them!
 
 ## Copyright & License
 

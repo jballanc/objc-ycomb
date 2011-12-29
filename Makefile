@@ -1,4 +1,4 @@
-CC = clang -framework Foundation -fobjc-gc-only
+CC = clang -framework Foundation -fobjc-arc
 all_targets = fact watch fun nofun
 
 all: $(all_targets)
