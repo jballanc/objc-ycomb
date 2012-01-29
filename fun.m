@@ -1,5 +1,5 @@
 //
-// fun.m 
+// fun.m
 //
 // A little fun test for interacting with static variables.
 //

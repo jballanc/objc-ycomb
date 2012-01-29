@@ -10,7 +10,7 @@ fact:
 	$(MAKE) compile target=fact
 
 watch:
-	$(MAKE) compile target=watch 
+	$(MAKE) compile target=watch
 
 fun:
 	$(MAKE) compile target=fun
