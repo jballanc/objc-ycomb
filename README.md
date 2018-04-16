@@ -1,5 +1,7 @@
 # y.h
 
+[![Project Status: Concept – Minimal or no implementation has been done yet, or the repository is only intended to be a limited example, demo, or proof-of-concept.](http://www.repostatus.org/badges/latest/concept.svg)](http://www.repostatus.org/#concept)
+
 A Y-combinator for Objective-C
 
 
@@ -8,7 +10,7 @@ A Y-combinator for Objective-C
 A [Fixed Point Combinator](http://en.wikipedia.org/wiki/Fixed-point_combinator) is a mathematical device from lambda calculus. It is
 a higher-order function that computes the fixed point of another function. The most well known fixed-point combinator is the Y-Combinator,
 which has the form: Y = λf.(λx.f (x x)) (λx.f (x x))
-<br/>
+
 ### Uhhh...ok... What?
 
 Right, so practically speaking the Y-Combinator allows you to call an anonymous function (sometimes called lambdas, procs, or
@@ -24,7 +26,7 @@ block recursively; see [fun.m](/jballanc/objc-ycomb/blob/master/fun.m) for the f
                                       }
                                       return;
                                     });
-<br/>
+
 ### Um, but why do I need a Y-Combinator to do that?
 
 Well, you don't always. In languages where symbols are late-bound, you can accomplish the same sort of thing by assigning the
@@ -57,7 +59,6 @@ encountered, <code>count_until</code> has a value (it's a lambda). If you tried 
 you would find, after compiling and executing it, that you get a segmentation fault. This is because Objective-C is early-bound. It
 attempts to figure out what <code>count_until</code> is before <code>count_until</code> has been completely defined.
 
-<br/>
 ### Great! What else can I do with this?
 
 Well, the Y-Combinator allows you to call any block recursively. For example, you could write a factorial block like so (see
@@ -78,7 +79,6 @@ argument. However, this argument is defined as type <code>id</code> (which is re
 *</code>), so a simple way to handle multiple arguments is to use an <code>NSArray</code> or <code>NSDictionary</code> to
 pack/unpack the arguments.
 
-<br/>
 ### Ok, fun...but I'm a serious programmer. Can I do anything serious with this?
 
 Why, I'm glad you asked! The motivation for creating a Y-Combinator for Objective-C originated with a useful, but somewhat
